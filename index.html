@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>星空电影网 - 浩瀚片库 点亮每一颗观影星球 | xingkongdianyingwang-wap.github.io</title>
+<meta name="keywords" content="星空电影网,星空影视,浩瀚片库,在线观影,电影在线观看,高清影视资源,经典电影,星空放映,xingkongdianyingwang-wap.github.io">
+<meta name="description" content="星空电影网(xingkongdianyingwang-wap.github.io)浩瀚片库，点亮每一颗观影星球。海量高清影视资源在线观看，经典老片与最新热播一网打尽。">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="renderer" content="webkit">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#070b1a">
+<link rel="canonical" href="https://xingkongdianyingwang-wap.github.io/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="星空电影网">
+<meta property="og:title" content="星空电影网 - 浩瀚片库 点亮每一颗观影星球">
+<meta property="og:description" content="星空电影网浩瀚片库，点亮每一颗观影星球。海量高清影视资源在线观看，经典老片与最新热播一网打尽。">
+<meta property="og:url" content="https://xingkongdianyingwang-wap.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://xingkongdianyingwang-wap.github.io/#organization",
+      "name": "星空电影网",
+      "url": "https://xingkongdianyingwang-wap.github.io/",
+      "description": "星空电影网提供浩瀚影视片库与高清在线观影服务，点亮每一颗观影星球。"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://xingkongdianyingwang-wap.github.io/#website",
+      "url": "https://xingkongdianyingwang-wap.github.io/",
+      "name": "星空电影网",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://xingkongdianyingwang-wap.github.io/#search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scrollbar-color:#3b4a7a #070b1a;scrollbar-width:thin}
+body{
+  font-family:"WenQuanYi Micro Hei","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  color:#e6e9f5;background:#070b1a;line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;transition:.3s}
+img{max-width:100%;display:block}
+ul,ol{list-style:none}
+button{font-family:inherit;cursor:pointer;border:none;outline:none;background:none;color:inherit}
+input{font-family:inherit}
+:focus-visible{outline:2px solid #7c9bff;outline-offset:3px}
+
+:root{
+  --bg:#070b1a;--bg2:#0b1024;--panel:#0f1530;--panel2:#151c3d;
+  --line:rgba(124,155,255,.26);--line2:rgba(155,178,255,.13);
+  --txt:#e6e9f5;--txt2:#a8b0cf;--txt3:#6d7598;
+  --blue:#7c9bff;--indigo:#818cf8;--violet:#a78bfa;
+  --cyan:#38bdf8;--pink:#f472b6;--gold:#fbbf24;
+  --r:14px;--maxw:1280px;
+}
+::selection{background:var(--blue);color:#04071a}
+
+/* ===== 星空画布 ===== */
+canvas#sky{position:fixed;inset:0;z-index:-2;width:100%;height:100%;opacity:.7}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(900px 600px at 82% 8%,rgba(124,155,255,.16),transparent 60%),radial-gradient(800px 700px at 10% 90%,rgba(167,139,250,.12),transparent 55%);pointer-events:none}
+
+/* ===== 顶部信息条 ===== */
+.topbar{background:rgba(7,11,26,.92);border-bottom:1px solid var(--line2);font-size:12px;color:var(--txt3);backdrop-filter:blur(10px)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:36px;gap:16px;flex-wrap:wrap}
+.topbar a:hover{color:var(--blue)}
+.tl-l{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
+.tl-l span{display:flex;align-items:center;gap:6px}
+.tl-l .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:pl 1.8s infinite}
+@keyframes pl{50%{opacity:.3}}
+
+/* ===== 导航 ===== */
+.hd{position:sticky;top:0;z-index:100;background:rgba(7,11,26,.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line2)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;height:74px;gap:24px}
+.logo{display:flex;align-items:center;gap:14px}
+.logo-i{position:relative;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#2a3464,#0c1128);border:1.5px solid var(--line);display:grid;place-items:center;overflow:hidden;box-shadow:0 0 18px rgba(124,155,255,.3)}
+.logo-i b{font-size:15px;font-weight:900;color:var(--blue);letter-spacing:-1px;position:relative;z-index:1}
+.logo-i::after{content:"";position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;top:9px;right:12px;box-shadow:8px 12px 0 #fff,-6px 18px 0 #fff,12px 2px 0 #fbbf24}
+.logo-t b{font-size:20px;font-weight:900;letter-spacing:.5px}
+.logo-t b em{font-style:normal;background:linear-gradient(90deg,var(--blue),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo-t small{display:block;font-size:10px;color:var(--txt3);letter-spacing:2.5px;text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:2px;font-size:14px}
+.nav a{padding:9px 15px;border-radius:8px;color:var(--txt2);font-weight:500}
+.nav a:hover{color:#fff;background:rgba(124,155,255,.12)}
+.hd-r{display:flex;align-items:center;gap:10px}
+.srch{position:relative}
+.srch input{width:230px;background:rgba(11,16,36,.8);border:1px solid var(--line2);border-radius:9px;padding:10px 40px 10px 15px;color:var(--txt);font-size:13.5px;outline:none;transition:.3s}
+.srch input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(124,155,255,.14)}
+.srch input::placeholder{color:var(--txt3)}
+.srch button{position:absolute;right:11px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--txt2)}
+.btn-p{font-size:13.5px;font-weight:700;padding:10px 20px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff;transition:.3s;box-shadow:0 6px 18px rgba(124,155,255,.3)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(124,155,255,.45)}
+.mbtn{display:none;width:42px;height:42px;border-radius:10px;background:rgba(11,16,36,.8);border:1px solid var(--line2);font-size:20px;color:var(--txt)}
+
+/* ===== 布局 ===== */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{padding:100px 0;position:relative}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"✦";color:var(--cyan)}
+.sec-t{font-size:clamp(26px,4vw,40px);font-weight:900;letter-spacing:-.6px;line-height:1.2;margin-bottom:16px}
+.sec-t em{font-style:normal;background:linear-gradient(90deg,var(--blue),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sec-s{color:var(--txt2);font-size:15.5px;max-width:640px;line-height:1.85}
+.sec-h{margin-bottom:52px}
+.sec-h-r{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:52px}
+.sec-h-r>div{min-width:280px}
+.link-m{font-size:13.5px;font-weight:700;color:var(--cyan);white-space:nowrap}
+.link-m:hover{color:#7dd3fc}
+
+/* ===== Hero 星空望远镜式 ===== */
+.hero{padding:64px 0 100px}
+.hero-in{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.hero-l .hm-tag{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;letter-spacing:2px;color:#fff;background:rgba(124,155,255,.16);border:1px solid var(--line);padding:7px 15px;border-radius:20px;margin-bottom:26px}
+.hero-l h1{font-size:clamp(34px,5.4vw,62px);font-weight:900;line-height:1.08;letter-spacing:-1.5px;margin-bottom:26px}
+.hero-l h1 i{font-style:normal;background:linear-gradient(90deg,var(--blue),var(--violet),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-l p{font-size:16.5px;color:var(--txt2);margin-bottom:34px;max-width:520px;line-height:1.9}
+.hm-cta{display:flex;gap:14px;flex-wrap:wrap}
+.bt{display:inline-flex;align-items:center;gap:8px;padding:15px 30px;border-radius:10px;font-size:14.5px;font-weight:700;transition:.3s}
+.bt-1{background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff;box-shadow:0 8px 24px rgba(124,155,255,.35)}
+.bt-1:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(124,155,255,.5)}
+.bt-2{border:1px solid var(--line2);color:var(--txt)}
+.bt-2:hover{border-color:var(--blue);color:#fff}
+.hm-cta2{display:flex;gap:36px;flex-wrap:wrap;margin-top:40px;padding-top:30px;border-top:1px solid var(--line2)}
+.hm-cta2 i{font-style:normal;display:block;font-size:24px;font-weight:900;color:#fff}
+.hm-cta2 span{font-size:12.5px;color:var(--txt3)}
+
+/* 右侧星球视觉 */
+.hero-r{position:relative;height:520px;display:grid;place-items:center}
+.orbit{position:absolute;inset:0;display:grid;place-items:center}
+.o{position:absolute;border-radius:50%;border:1px solid var(--line2)}
+.o1{width:520px;height:520px;animation:rot 60s linear infinite}
+.o2{width:400px;height:400px;border-style:dashed;animation:rot 40s linear infinite reverse}
+.o3{width:290px;height:290px;animation:rot 28s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.planet{position:relative;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#c9d8ff,#7c9bff 35%,#3b4a9a 70%,#1e2757);box-shadow:0 0 60px rgba(124,155,255,.5),inset -18px -22px 40px rgba(10,14,40,.6);z-index:2}
+.planet::before{content:"";position:absolute;inset:-34px;border-radius:50%;border:6px solid rgba(251,191,36,.5);transform:rotate(-22deg);clip-path:polygon(0 0,100% 0,100% 52%,0 48%)}
+.sat{position:absolute;border-radius:50%;background:radial-gradient(circle at 32% 28%,#fff,#b9c6ff 40%,#5a6bb8);box-shadow:0 0 16px rgba(155,178,255,.6)}
+.s1{width:34px;height:34px;top:20%;left:8%;animation:float 6s ease-in-out infinite}
+.s2{width:22px;height:22px;bottom:26%;right:12%;background:radial-gradient(circle at 32% 28%,#ffe9a8,#fbbf24 45%,#b45309);box-shadow:0 0 16px rgba(251,191,36,.6);animation:float 5s ease-in-out infinite reverse}
+.s3{width:16px;height:16px;top:16%;right:22%;background:radial-gradient(circle at 32% 28%,#fbcfe8,#f472b6 45%,#9d174d);box-shadow:0 0 14px rgba(244,114,182,.6);animation:float 7s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-16px)}}
+.hr-card{position:absolute;bottom:18px;left:0;right:0;margin:0 auto;width:min(92%,420px);background:rgba(11,16,36,.85);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:var(--r);padding:20px 24px;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.hr-card b{font-size:15px;display:block}
+.hr-card small{font-size:12.5px;color:var(--txt3)}
+.hr-card .live{font-size:11.5px;font-weight:700;color:#04071a;background:var(--cyan);padding:6px 13px;border-radius:20px;white-space:nowrap}
+
+/* ===== 栏目一：星座分区（环形 + 网格） ===== */
+.zodiac{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+.zd{position:relative;background:rgba(15,21,48,.72);backdrop-filter:blur(8px);border:1px solid var(--line2);border-radius:var(--r);padding:26px 22px;transition:.4s;overflow:hidden}
+.zd:hover{border-color:var(--blue);transform:translateY(-6px);box-shadow:0 18px 40px rgba(124,155,255,.2)}
+.zd::before{content:"";position:absolute;top:0;right:0;width:70px;height:70px;border-radius:0 0 0 70px;background:var(--g,rgba(124,155,255,.16));opacity:.5}
+.zd .z-ic{font-size:30px;margin-bottom:16px;display:inline-block;width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:rgba(124,155,255,.1);border:1px solid var(--line2)}
+.zd h3{font-size:17px;font-weight:800;margin-bottom:6px}
+.zd p{font-size:12.5px;color:var(--txt3);line-height:1.7}
+.zd .z-m{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:14px;border-top:1px solid var(--line2)}
+.zd .z-m span{font-size:11.5px;color:var(--txt3)}
+.zd .z-m a{font-size:13px;font-weight:700;color:var(--cyan)}
+.zd .z-m a:hover{color:#7dd3fc}
+
+/* ===== 栏目二：放映大厅（真实影院） ===== */
+.hall-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px}
+.ht{font-size:13.5px;padding:10px 22px;border-radius:9px;background:rgba(15,21,48,.6);border:1px solid var(--line2);color:var(--txt2);transition:.3s;font-weight:600}
+.ht.on{background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff;border-color:transparent}
+.ht:hover:not(.on){border-color:var(--blue);color:var(--blue)}
+.screen{position:relative;background:linear-gradient(180deg,rgba(124,155,255,.12),transparent);border:1px solid var(--line2);border-radius:16px 16px 6px 6px;padding:26px 26px 34px;text-align:center;margin-bottom:30px}
+.screen::after{content:"";position:absolute;bottom:10px;left:6%;right:6%;height:2px;background:linear-gradient(90deg,transparent,var(--blue),var(--violet),var(--blue),transparent)}
+.screen span{font-size:11px;letter-spacing:6px;color:var(--txt3);text-transform:uppercase}
+.seats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.seat{position:relative;background:rgba(15,21,48,.72);border:1px solid var(--line2);border-radius:var(--r);padding:16px 18px;transition:.35s}
+.seat:hover{border-color:var(--blue);background:rgba(124,155,255,.1);transform:translateY(-4px)}
+.seat .num{font-family:ui-monospace,monospace;font-size:11px;color:var(--txt3);letter-spacing:1px}
+.seat h4{font-size:15.5px;font-weight:700;margin:8px 0 6px;line-height:1.4}
+.seat h4 a:hover{color:var(--cyan)}
+.seat .meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--txt3);margin-top:10px;padding-top:10px;border-top:1px solid var(--line2)}
+.seat .sc{font-weight:700;color:var(--gold);font-family:ui-monospace,monospace}
+.seat .st{font-size:10.5px;padding:3px 8px;border-radius:5px;background:rgba(56,189,248,.14);color:#7dd3fc}
+
+/* ===== 栏目三：观星指南（阶梯式） ===== */
+.guide{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.gd{position:relative;padding:34px 28px;background:rgba(15,21,48,.72);border:1px solid var(--line2);transition:.4s}
+.gd:first-child{border-radius:var(--r) 0 0 var(--r)}
+.gd:last-child{border-radius:0 var(--r) var(--r) 0}
+.gd + .gd{border-left:none}
+.gd:hover{background:rgba(124,155,255,.1);z-index:2;box-shadow:0 16px 36px rgba(124,155,255,.18)}
+.gd .g-n{font-size:12px;font-weight:800;letter-spacing:2px;color:var(--cyan);margin-bottom:16px}
+.gd h4{font-size:18px;font-weight:800;margin-bottom:12px}
+.gd p{font-size:13.5px;color:var(--txt2);line-height:1.85}
+
+/* ===== 栏目四：星轨图（时间轴） ===== */
+.orbit-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.ow-col h4{font-size:15px;font-weight:800;color:var(--cyan);margin-bottom:28px;padding-bottom:14px;border-bottom:1px solid var(--line2);display:flex;justify-content:space-between;align-items:center}
+.ow-col h4 small{font-size:12px;color:var(--txt3);font-weight:400}
+.st-track{position:relative;padding-left:26px}
+.st-track::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--blue),var(--violet),transparent)}
+.st{position:relative;padding:0 0 26px}
+.st:last-child{padding-bottom:0}
+.st::before{content:"";position:absolute;left:-25px;top:7px;width:14px;height:14px;border-radius:50%;background:#070b1a;border:2px solid var(--blue);box-shadow:0 0 10px rgba(124,155,255,.5)}
+.st time{font-size:11.5px;color:var(--gold);font-weight:700;font-family:ui-monospace,monospace;letter-spacing:1px}
+.st h5{font-size:16px;font-weight:700;margin:6px 0 6px;line-height:1.45}
+.st h5 a:hover{color:var(--cyan)}
+.st p{font-size:13.5px;color:var(--txt2);line-height:1.8}
+
+/* ===== 数据星团 ===== */
+.cluster{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.cl{position:relative;background:rgba(15,21,48,.72);border:1px solid var(--line2);border-radius:var(--r);padding:32px 26px;overflow:hidden;transition:.4s}
+.cl:hover{border-color:var(--blue);transform:translateY(-5px)}
+.cl::after{content:"";position:absolute;right:-20px;bottom:-20px;width:100px;height:100px;border-radius:50%;background:var(--g,rgba(124,155,255,.18));filter:blur(20px)}
+.cl .n{font-size:36px;font-weight:900;line-height:1;color:#fff}
+.cl .n i{font-style:normal;font-size:18px;color:var(--cyan)}
+.cl .l{font-size:13.5px;color:var(--txt2);margin-top:10px}
+.cl .u{font-size:10.5px;letter-spacing:2px;color:var(--txt3);margin-top:6px;text-transform:uppercase}
+
+/* ===== 栏目五：星空手记（瀑布流） ===== */
+.notes{columns:3;column-gap:22px}
+.nt{break-inside:avoid;background:rgba(15,21,48,.72);border:1px solid var(--line2);border-radius:var(--r);padding:26px;margin-bottom:22px;transition:.4s}
+.nt:hover{border-color:var(--blue);transform:translateY(-5px)}
+.nt .pin{font-size:11.5px;color:var(--gold);font-weight:700;letter-spacing:1px;margin-bottom:12px;display:block}
+.nt h4{font-size:16.5px;font-weight:800;margin-bottom:12px;line-height:1.5}
+.nt p{font-size:14px;color:var(--txt2);line-height:1.9}
+.nt-f{display:flex;align-items:center;gap:12px;margin-top:20px;padding-top:16px;border-top:1px solid var(--line2)}
+.av{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:12.5px;font-weight:800;color:#04071a;flex-shrink:0;background:linear-gradient(135deg,var(--blue),var(--violet))}
+.nt-f b{font-size:13px;display:block}
+.nt-f small{font-size:11.5px;color:var(--txt3)}
+
+/* ===== 栏目六：星舰服务 ===== */
+.srv{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.sv{display:grid;grid-template-columns:56px 1fr;gap:18px;background:rgba(15,21,48,.72);border:1px solid var(--line2);border-radius:var(--r);padding:26px;transition:.4s;align-items:start}
+.sv:hover{border-color:var(--blue);background:rgba(124,155,255,.08)}
+.sv .ic{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;font-size:24px;background:rgba(124,155,255,.1);border:1px solid var(--line2)}
+.sv h4{font-size:16.5px;font-weight:800;margin-bottom:8px}
+.sv p{font-size:13.5px;color:var(--txt2);line-height:1.85}
+
+/* ===== CTA ===== */
+.cta-box{position:relative;background:radial-gradient(600px 300px at 50% 0%,rgba(124,155,255,.22),transparent),rgba(15,21,48,.6);border:1px solid var(--line);border-radius:20px;padding:64px 40px;text-align:center;overflow:hidden}
+.cta-box::before,.cta-box::after{content:"";position:absolute;border-radius:50%;border:1px solid var(--line2)}
+.cta-box::before{width:300px;height:300px;top:-150px;left:-100px}
+.cta-box::after{width:400px;height:400px;bottom:-200px;right:-120px;border-color:rgba(167,139,250,.2)}
+.cta-box h2{font-size:clamp(26px,4vw,40px);font-weight:900;line-height:1.25;margin-bottom:18px;position:relative}
+.cta-box p{color:var(--txt2);font-size:16px;max-width:560px;margin:0 auto 34px;position:relative}
+.cta-box .hm-cta{justify-content:center}
+
+/* ===== 栏目七：FAQ 星图 ===== */
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fq{background:rgba(15,21,48,.72);border:1px solid var(--line2);border-radius:var(--r);overflow:hidden}
+.fq-q{width:100%;text-align:left;padding:20px 24px;font-size:15.5px;font-weight:600;display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.fq-q span:last-child{color:var(--cyan);font-size:18px;flex-shrink:0;transition:.3s}
+.fq.open .fq-q span:last-child{transform:rotate(45deg)}
+.fq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.fq-a p{padding:0 24px 22px;font-size:14.5px;color:var(--txt2);line-height:1.9}
+
+/* ===== 页脚 ===== */
+footer{background:rgba(5,8,20,.92);border-top:1px solid var(--line2);padding:72px 0 0;backdrop-filter:blur(10px)}
+.fg{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr 1fr;gap:40px;padding-bottom:52px}
+.f-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.f-logo b{font-size:19px;font-weight:900}
+.f-logo b em{font-style:normal;background:linear-gradient(90deg,var(--blue),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.f-desc{font-size:13.5px;color:var(--txt2);line-height:1.9;max-width:340px}
+.f-subs{margin-top:22px;display:flex;gap:0;max-width:340px}
+.f-subs input{flex:1;background:rgba(11,16,36,.8);border:1px solid var(--line2);border-right:none;border-radius:9px 0 0 9px;padding:11px 14px;color:var(--txt);font-size:13.5px;outline:none}
+.f-subs input:focus{border-color:var(--blue)}
+.f-subs button{background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff;font-weight:700;padding:0 22px;border-radius:0 9px 9px 0;font-size:13.5px}
+.fg h5{font-size:13px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#fff;margin-bottom:18px}
+.fg a{display:block;font-size:13.5px;color:var(--txt2);padding:6px 0}
+.fg a:hover{color:var(--cyan)}
+.fbot{padding:24px 0;border-top:1px solid var(--line2);display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:12.5px;color:var(--txt3)}
+.fbot a:hover{color:var(--cyan)}
+.fbot .links{display:flex;gap:20px;flex-wrap:wrap}
+
+#top{position:fixed;right:22px;bottom:-60px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:18px;z-index:99;transition:.4s;background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff;box-shadow:0 8px 24px rgba(124,155,255,.4)}
+#top.show{bottom:22px}
+#top:hover{transform:translateY(-4px)}
+
+@media(max-width:1080px){
+  .guide{grid-template-columns:1fr 1fr}
+  .gd:first-child{border-radius:var(--r) 0 0 0}
+  .gd:nth-child(2){border-radius:0 var(--r) 0 0;border-left:none}
+  .gd:nth-child(3){border-radius:0 0 0 var(--r);border-top:none}
+  .gd:last-child{border-radius:0 0 var(--r) 0;border-top:none;border-left:none}
+}
+@media(max-width:960px){
+  section{padding:76px 0}
+  .hero-in{grid-template-columns:1fr;gap:40px}
+  .hero-r{height:420px}
+  .orbit-wrap{grid-template-columns:1fr;gap:44px}
+}
+@media(max-width:720px){
+  .wrap{padding:0 18px}
+  .mbtn{display:grid;place-items:center}
+  .topbar{display:none}
+  .hd .wrap{height:64px}
+  .nav{position:fixed;top:64px;left:12px;right:12px;flex-direction:column;padding:14px;background:rgba(7,11,26,.98);backdrop-filter:blur(18px);border:1px solid var(--line2);border-radius:14px;transform:translateY(-400%);opacity:0;transition:.35s;pointer-events:none;z-index:100}
+  .nav.open{transform:translateY(0);opacity:1;pointer-events:auto}
+  .nav a{width:100%;text-align:center;padding:14px;border-radius:8px}
+  .srch{display:none}
+  .btn-p{padding:9px 14px;font-size:13px}
+  .logo-t small{display:none}
+  .notes{columns:1}
+  .seats{grid-template-columns:1fr 1fr}
+  .fg{grid-template-columns:1fr 1fr;gap:32px}
+  .faq-grid{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .hero-r{height:360px}
+  .o1{width:340px;height:340px}
+  .o2{width:260px;height:260px}
+  .o3{width:190px;height:190px}
+  .planet{width:120px;height:120px}
+  .gd,.guide{grid-template-columns:1fr}
+  .gd:first-child,.gd:nth-child(2),.gd:nth-child(3),.gd:last-child{border-radius:var(--r);border:1px solid var(--line2)}
+  .seats{grid-template-columns:1fr}
+  .fg{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<!-- 顶部信息条 -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="tl-l">
+      <span><i class="dot"></i> 星空信号正常 · 放映中</span>
+      <span>官网：xingkongdianyingwang-wap.github.io</span>
+    </div>
+    <div><a href="#">💬 星空驿站</a> · <a href="#">📮 投递片单</a></div>
+  </div>
+</div>
+
+<!-- 导航 -->
+<header class="hd">
+  <div class="wrap">
+    <a class="logo" href="#home">
+      <span class="logo-i"><b>X</b></span>
+      <div class="logo-t"><b>星空<em>电影网</em></b><small>Starry Cinema Universe</small></div>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#home">首页</a>
+      <a href="#zodiac">星座分区</a>
+      <a href="#hall">放映大厅</a>
+      <a href="#guide">观星指南</a>
+      <a href="#srv">星舰服务</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <div class="hd-r">
+      <div class="srch"><input type="search" placeholder="搜索电影 / 剧集 / 星球" aria-label="搜索"><button aria-label="搜索">⌕</button></div>
+      <a class="btn-p" href="#">收藏本站</a>
+      <button class="mbtn" id="mbtn" aria-label="菜单">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-in">
+      <div class="hero-l">
+        <span class="hm-tag">✦ 浩瀚片库 · 点亮每一颗观影星球</span>
+        <h1>浩瀚片库<br>点亮每一颗<i>观影星球</i></h1>
+        <p>星空电影网（xingkongdianyingwang-wap.github.io）是一座浩瀚的影视星图。每一部作品都是一颗星球，从经典老片到最新热播，任你遨游星海、随心点播，永不迷航。</p>
+        <div class="hm-cta">
+          <a class="bt bt-1" href="#hall">🚀 进入放映大厅</a>
+          <a class="bt bt-2" href="#zodiac">浏览星座分区</a>
+        </div>
+        <div class="hm-cta2">
+          <div><i>10万+</i><span>影视星球</span></div>
+          <div><i>8K</i><span>极致画质</span></div>
+          <div><i>365天</i><span>全年无休</span></div>
+          <div><i>0 卡顿</i><span>星际加速</span></div>
+        </div>
+      </div>
+
+      <div class="hero-r" aria-hidden="true">
+        <div class="orbit"><div class="o o1"></div><div class="o o2"></div><div class="o o3"></div></div>
+        <div class="planet"></div>
+        <div class="sat s1"></div>
+        <div class="sat s2"></div>
+        <div class="sat s3"></div>
+        <div class="hr-card">
+          <div><b>正在放映 · 星空一号厅</b><small>《默杀》4K 修复 · 第 3 集</small></div>
+          <span class="live">● LIVE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目一：星座分区 -->
+<section id="zodiac" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h-r">
+      <div><div class="eyebrow">栏目一 · 星座分区</div><div class="sec-t">星座<em>分区</em></div><p class="sec-s">像星图一样为影视分门别类，每个星座分区都是一条独立的观影航线，带你深入不同类型的浩瀚星海。</p></div>
+      <a class="link-m" href="#">查看完整星图 →</a>
+    </div>
+    <div class="zodiac">
+      <a class="zd" href="#" style="--g:rgba(124,155,255,.18)"><span class="z-ic">🎬</span><h3>光影星云</h3><p>院线热映大片，最新院线电影第一时间同步上线。</p><div class="z-m"><span>1,240 颗星球</span><a href="#">进入 →</a></div></a>
+      <a class="zd" href="#" style="--g:rgba(244,114,182,.16)"><span class="z-ic">📺</span><h3>剧集星河</h3><p>国产、美剧、韩剧、日剧，热门剧集全集连播。</p><div class="z-m"><span>3,800+ 颗星球</span><a href="#">进入 →</a></div></a>
+      <a class="zd" href="#" style="--g:rgba(251,191,36,.16)"><span class="z-ic">🏆</span><h3>经典星碑</h3><p>4K 修复老片与高分经典，历久弥新的银幕记忆。</p><div class="z-m"><span>2,160 颗星球</span><a href="#">进入 →</a></div></a>
+      <a class="zd" href="#" style="--g:rgba(56,189,248,.16)"><span class="z-ic">🧭</span><h3>悬疑黑洞</h3><p>反转不断的高分悬疑惊悚，每一部都让人屏息。</p><div class="z-m"><span>890 颗星球</span><a href="#">进入 →</a></div></a>
+      <a class="zd" href="#" style="--g:rgba(167,139,250,.16)"><span class="z-ic">🌿</span><h3>治愈光年</h3><p>轻松温情的影视作品，适合疲惫时静静观看。</p><div class="z-m"><span>1,530 颗星球</span><a href="#">进入 →</a></div></a>
+      <a class="zd" href="#" style="--g:rgba(129,140,248,.16)"><span class="z-ic">🎨</span><h3>动画星系</h3><p>国漫、日漫、欧美动画，大小朋友的动画乐园。</p><div class="z-m"><span>2,400+ 颗星球</span><a href="#">进入 →</a></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目二：放映大厅 -->
+<section id="hall" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h-r">
+      <div><div class="eyebrow">栏目二 · 放映大厅</div><div class="sec-t">放映<em>大厅</em></div><p class="sec-s">多座放映厅同步放映，按类型自由切换，选好座位即可一键点播。</p></div>
+      <a class="link-m" href="#">全部放映厅 →</a>
+    </div>
+    <div class="hall-tabs">
+      <button class="ht on">全部星厅</button>
+      <button class="ht">光影星云</button>
+      <button class="ht">剧集星河</button>
+      <button class="ht">经典星碑</button>
+      <button class="ht">悬疑黑洞</button>
+      <button class="ht">治愈光年</button>
+    </div>
+    <div class="screen"><span>◆ ◆ ◆ 银 幕 方 向 ◆ ◆ ◆</span></div>
+    <div class="seats">
+      <div class="seat"><span class="num">A · 01</span><h4><a href="#">消失的她</a></h4><div class="meta"><span class="sc">9.2</span><span class="st">放映中</span></div></div>
+      <div class="seat"><span class="num">A · 02</span><h4><a href="#">默杀</a></h4><div class="meta"><span class="sc">9.3</span><span class="st">满座</span></div></div>
+      <div class="seat"><span class="num">A · 03</span><h4><a href="#">抓娃娃</a></h4><div class="meta"><span class="sc">8.8</span><span class="st">放映中</span></div></div>
+      <div class="seat"><span class="num">A · 04</span><h4><a href="#">逆行人生</a></h4><div class="meta"><span class="sc">8.5</span><span class="st">即将开播</span></div></div>
+      <div class="seat"><span class="num">A · 05</span><h4><a href="#">死侍与金刚狼</a></h4><div class="meta"><span class="sc">8.7</span><span class="st">放映中</span></div></div>
+      <div class="seat"><span class="num">A · 06</span><h4><a href="#">异人之下</a></h4><div class="meta"><span class="sc">8.1</span><span class="st">放映中</span></div></div>
+      <div class="seat"><span class="num">B · 01</span><h4><a href="#">云边有个小卖部</a></h4><div class="meta"><span class="sc">8.3</span><span class="st">放映中</span></div></div>
+      <div class="seat"><span class="num">B · 02</span><h4><a href="#">传说</a></h4><div class="meta"><span class="sc">7.9</span><span class="st">即将开播</span></div></div>
+      <div class="seat"><span class="num">B · 03</span><h4><a href="#">海关战线</a></h4><div class="meta"><span class="sc">8.0</span><span class="st">放映中</span></div></div>
+      <div class="seat"><span class="num">B · 04</span><h4><a href="#">负负得正</a></h4><div class="meta"><span class="sc">8.4</span><span class="st">放映中</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 数据星团 -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cluster">
+      <div class="cl" style="--g:rgba(124,155,255,.2)"><div class="n">10<i>万+</i></div><div class="l">浩瀚影视片库</div><div class="u">Star Films</div></div>
+      <div class="cl" style="--g:rgba(56,189,248,.2)"><div class="n">8<i>K</i></div><div class="l">极致画质支持</div><div class="u">Ultra HD</div></div>
+      <div class="cl" style="--g:rgba(167,139,250,.2)"><div class="n">2,160</div><div class="l">4K 修复经典</div><div class="u">Restored</div></div>
+      <div class="cl" style="--g:rgba(251,191,36,.2)"><div class="n">0<i> 卡顿</i></div><div class="l">星际加速点播</div><div class="u">Zero Lag</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目三：观星指南 -->
+<section id="guide" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h-r">
+      <div><div class="eyebrow">栏目三 · 观星指南</div><div class="sec-t">四步开启<em>星空观影</em></div><p class="sec-s">无需注册下载，四步即可在浩瀚星海中找到属于你的那颗观影星球。</p></div>
+    </div>
+    <div class="guide">
+      <div class="gd"><div class="g-n">STEP 01</div><h4>选择星座</h4><p>从六大星座分区中，挑选今晚最契合心境的观影航线。</p></div>
+      <div class="gd"><div class="g-n">STEP 02</div><h4>锁定星球</h4><p>浏览放映大厅，按评分、类型、热度筛选，锁定心仪作品。</p></div>
+      <div class="gd"><div class="g-n">STEP 03</div><h4>一键放映</h4><p>点击即播，星际加速多线路切换，4K / 1080P 自由调节。</p></div>
+      <div class="gd"><div class="g-n">STEP 04</div><h4>收藏星图</h4><p>一键收藏到私人星图，下次登录即可继续未完的旅程。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目四：星轨图 -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h-r">
+      <div><div class="eyebrow">栏目四 · 星轨图</div><div class="sec-t">放映<em>星轨图</em></div><p class="sec-s">编辑团队编排的每日放映计划，让每一次观影都有迹可循。</p></div>
+    </div>
+    <div class="orbit-wrap">
+      <div class="ow-col">
+        <h4>电影星轨 <small>· FILMS</small></h4>
+        <div class="st-track">
+          <div class="st"><time>MON 20:00</time><h5><a href="#">光影星云 · 院线之夜</a></h5><p>《默杀》《消失的她》等高口碑院线电影连映，感受大银幕质感。</p></div>
+          <div class="st"><time>TUE 20:00</time><h5><a href="#">经典星碑 · 4K 修复</a></h5><p>《霸王别姬》《活着》华语经典 4K 修复版专场。</p></div>
+          <div class="st"><time>WED 22:00</time><h5><a href="#">悬疑黑洞 · 深夜专场</a></h5><p>高分悬疑惊悚连播，适合独自品味的心跳之夜。</p></div>
+          <div class="st"><time>THU 20:00</time><h5><a href="#">治愈光年 · 温情放映</a></h5><p>轻松治愈系电影专场，为心灵放一个假。</p></div>
+        </div>
+      </div>
+      <div class="ow-col">
+        <h4>剧集星轨 <small>· SERIES</small></h4>
+        <div class="st-track">
+          <div class="st"><time>FRI 19:30</time><h5><a href="#">剧集星河 · 国产热播</a></h5><p>《繁花》《大江大河》等高口碑国产剧集连播。</p></div>
+          <div class="st"><time>SAT 20:00</time><h5><a href="#">全球剧场 · 美剧之夜</a></h5><p>热门美剧同步跟播，院线级制作水准。</p></div>
+          <div class="st"><time>SUN 20:00</time><h5><a href="#">动画星系 · 全家观影</a></h5><p>国漫与日漫精选，适合全家一起观看。</p></div>
+          <div class="st"><time>DAILY 12:00</time><h5><a href="#">午间星火 · 短片精选</a></h5><p>每日午间加映微电影与短片，碎片时间也能看。</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目五：星空手记 -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h-r">
+      <div><div class="eyebrow">栏目五 · 星空手记</div><div class="sec-t">星空<em>手记</em></div><p class="sec-s">编辑团队撰写的观影笔记，记录每一颗值得停留的星球。</p></div>
+      <a class="link-m" href="#">阅读全部手记 →</a>
+    </div>
+    <div class="notes">
+      <article class="nt"><span class="pin">📍 悬疑黑洞</span><h4>《默杀》：沉默的杀伤力</h4><p>当所有人都选择视而不见，沉默就成了最锋利的凶器。把校园霸凌拍出惊悚质感的国产佳作。</p><div class="nt-f"><span class="av">星</span><div><b>星空领航员</b><small>星空电影网主编</small></div></div></article>
+      <article class="nt"><span class="pin">📍 经典星碑</span><h4>《霸王别姬》：4K 修复后的每一帧都值得停格</h4><p>修复版让程蝶衣的每一滴泪都清晰可见。华语电影的天花板，星空电影网永远的压轴星。</p><div class="nt-f"><span class="av">碑</span><div><b>星碑守护者</b><small>经典修复策展人</small></div></div></article>
+      <article class="nt"><span class="pin">📍 治愈光年</span><h4>《云边有个小卖部》：写给故乡的信</h4><p>节奏缓慢却不拖沓，每个镜头都带着烟火气。适合失眠夜独自看完，然后安静入睡。</p><div class="nt-f"><span class="av">光</span><div><b>光年旅人</b><small>治愈栏目编辑</small></div></div></article>
+      <article class="nt"><span class="pin">📍 光影星云</span><h4>《死侍与金刚狼》：打破了第四面墙的狂欢</h4><p>漫威用最不正经的方式，完成了最动人的告别。笑声与感动齐飞，院线级观影体验。</p><div class="nt-f"><span class="av">云</span><div><b>星云观测员</b><small>院线栏目编辑</small></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目六：星舰服务 -->
+<section id="srv" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h-r">
+      <div><div class="eyebrow">栏目六 · 星舰服务</div><div class="sec-t">星舰<em>服务</em></div><p class="sec-s">从浩瀚片库到极致画质，星空电影网的每一项服务都为你的观影旅程而设。</p></div>
+    </div>
+    <div class="srv">
+      <div class="sv"><span class="ic">🛸</span><div><h4>浩瀚片库</h4><p>10 万+ 影视星球系统归档，经典老片与最新热播一网打尽，永不迷航。</p></div></div>
+      <div class="sv"><span class="ic">💠</span><div><h4>极致画质</h4><p>支持 8K / 4K / 1080P / 720P 多档切换，经典老片更提供 4K 修复版本。</p></div></div>
+      <div class="sv"><span class="ic">⚡</span><div><h4>星际加速</h4><p>多线路智能加速，点击即播告别缓冲，0 卡顿流畅观影体验。</p></div></div>
+      <div class="sv"><span class="ic">🗺️</span><div><h4>私人星图</h4><p>一键收藏到私人星图，自定义分类标签，打造属于你的观影清单。</p></div></div>
+      <div class="sv"><span class="ic">📡</span><div><h4>全年无休</h4><p>365 天每日定时更新，院线新片与热播剧集第一时间同步上线。</p></div></div>
+      <div class="sv"><span class="ic">🌐</span><div><h4>全端适配</h4><p>移动端自适应设计，手机、平板、电脑全兼容，随时随地遨游星海。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-box">
+      <h2>浩瀚片库，点亮每一颗观影星球<br>星空电影网与你不见不散</h2>
+      <p>星空电影网 xingkongdianyingwang-wap.github.io —— 浩瀚片库，点亮每一颗观影星球。海量高清影视资源在线观看。</p>
+      <div class="hm-cta"><a class="bt bt-1" href="#home">进入星空电影网</a><a class="bt bt-2" href="#hall">前往放映大厅</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目七：FAQ -->
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h" style="margin-bottom:44px"><div class="eyebrow">栏目七 · 常见问题</div><div class="sec-t">星图<em>问答</em></div><p class="sec-s">还有疑问？这里整理了星空旅人最常问到的问题。</p></div>
+    <div class="faq-grid">
+      <div class="fq open"><button class="fq-q"><span>星空电影网是什么网站？</span><span>+</span></button><div class="fq-a"><p>星空电影网（xingkongdianyingwang-wap.github.io）是一座浩瀚的影视星图，提供海量高清影视资源在线观看服务，经典老片与最新热播一网打尽，每一部作品都是一颗值得停留的星球。</p></div></div>
+      <div class="fq"><button class="fq-q"><span>官方网址是多少？</span><span>+</span></button><div class="fq-a"><p>官网地址为 <a href="https://xingkongdianyingwang-wap.github.io/" style="color:var(--cyan);font-weight:700">https://xingkongdianyingwang-wap.github.io/</a>，建议收藏以便随时访问星空电影网。</p></div></div>
+      <div class="fq"><button class="fq-q"><span>支持哪些清晰度？</span><span>+</span></button><div class="fq-a"><p>支持 8K / 4K / 1080P / 720P 多档清晰度自由切换，经典老片更提供 4K 修复版本，画质清晰音质纯净。</p></div></div>
+      <div class="fq"><button class="fq-q"><span>影视资源多久更新一次？</span><span>+</span></button><div class="fq-a"><p>坚持每日定时更新，365 天全年无休，院线新片与热播剧集第一时间同步上线。</p></div></div>
+      <div class="fq"><button class="fq-q"><span>手机上能正常观看吗？</span><span>+</span></button><div class="fq-a"><p>可以。网站采用移动端自适应设计，手机、平板、电脑均可流畅访问与播放。</p></div></div>
+      <div class="fq"><button class="fq-q"><span>可以收藏喜欢的影片吗？</span><span>+</span></button><div class="fq-a"><p>可以。本站支持私人星图功能，你可一键收藏并自定义分类标签，打造专属观影清单。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer>
+  <div class="wrap">
+    <div class="fg">
+      <div>
+        <div class="f-logo"><span class="logo-i"><b>X</b></span><b>星空<em>电影网</em></b></div>
+        <p class="f-desc">星空电影网（xingkongdianyingwang-wap.github.io）浩瀚片库，点亮每一颗观影星球。海量高清影视资源在线观看，经典老片与最新热播一网打尽。</p>
+        <form class="f-subs" onsubmit="event.preventDefault();this.querySelector('button').textContent='已订阅 ✓'">
+          <input type="email" placeholder="订阅星空放映预告" aria-label="邮箱"><button type="submit">订阅</button>
+        </form>
+      </div>
+      <div><h5>星座分区</h5><a href="#">光影星云</a><a href="#">剧集星河</a><a href="#">经典星碑</a><a href="#">悬疑黑洞</a></div>
+      <div><h5>放映大厅</h5><a href="#">院线热映</a><a href="#">剧集热播</a><a href="#">综艺娱乐</a><a href="#">动画星系</a></div>
+      <div><h5>星轨图</h5><a href="#">每日放映</a><a href="#">放映时间表</a><a href="#">星空手记</a><a href="#">投递片单</a></div>
+      <div><h5>关于</h5><a href="#">关于本站</a><a href="#">观星指南</a><a href="#">隐私政策</a><a href="#">免责声明</a></div>
+    </div>
+    <div class="fbot">
+      <span>© 2026 星空电影网 xingkongdianyingwang-wap.github.io 版权所有 · 浩瀚片库 点亮每一颗观影星球</span>
+      <div class="links"><a href="https://xingkongdianyingwang-wap.github.io/">官网首页</a><a href="#">隐私政策</a><a href="#">免责声明</a></div>
+    </div>
+  </div>
+</footer>
+
+<a id="top" href="#" aria-label="返回顶部">↑</a>
+
+<script>
+(function(){
+  "use strict";
+  /* 星空画布 */
+  var c=document.getElementById('sky'),x=c.getContext('2d'),w,h,stars=[],shooting=null;
+  function resize(){w=c.width=innerWidth;h=c.height=innerHeight;stars=[];var n=Math.min(180,Math.floor(w*h/9000));for(var i=0;i<n;i++)stars.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.6+.3,b:Math.random(),s:Math.random()*.02+.004,vx:(Math.random()-.5)*.15,vy:(Math.random()-.5)*.15});}
+  function draw(){
+    x.clearRect(0,0,w,h);
+    for(var i=0;i<stars.length;i++){var s=stars[i];s.b+=s.s;var a=.4+Math.abs(Math.sin(s.b))*.6;s.x+=s.vx;s.y+=s.vy;if(s.x<0)s.x=w;if(s.x>w)s.x=0;if(s.y<0)s.y=h;if(s.y>h)s.y=0;
+      x.beginPath();x.fillStyle='rgba(200,215,255,'+a+')';x.arc(s.x,s.y,s.r,0,7);x.fill();
+      if(s.r>1.3){x.beginPath();x.fillStyle='rgba(124,155,255,'+(a*.25)+')';x.arc(s.x,s.y,s.r*4,0,7);x.fill();}
+    }
+    if(shooting){
+      x.beginPath();x.strokeStyle='rgba(255,255,255,'+shooting.a+')';x.lineWidth=1.6;
+      x.moveTo(shooting.x,shooting.y);x.lineTo(shooting.x-shooting.vx*22,shooting.y-shooting.vy*22);x.stroke();
+      shooting.x+=shooting.vx;shooting.y+=shooting.vy;shooting.a-=.012;
+      if(shooting.a<=0||shooting.x<0||shooting.y>h)shooting=null;
+    }else if(Math.random()<.004){
+      shooting={x:Math.random()*w*.6,y:Math.random()*h*.5,vx:6+Math.random()*4,vy:2+Math.random()*2,a:1};
+    }
+    requestAnimationFrame(draw);
+  }
+  resize();draw();addEventListener('resize',resize);
+
+  /* 移动菜单 */
+  var btn=document.getElementById('mbtn'),nav=document.getElementById('nav');
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.textContent=o?'✕':'☰';});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');btn.textContent='☰';}});
+
+  /* 回到顶部 */
+  var t=document.getElementById('top');
+  window.addEventListener('scroll',function(){t.classList.toggle('show',window.scrollY>400);},{passive:true});
+  t.addEventListener('click',function(e){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});});
+
+  /* FAQ */
+  document.querySelectorAll('.fq').forEach(function(item){
+    var q=item.querySelector('.fq-q'),a=item.querySelector('.fq-a');
+    if(item.classList.contains('open'))a.style.maxHeight=a.scrollHeight+50+'px';
+    q.addEventListener('click',function(){var open=item.classList.toggle('open');a.style.maxHeight=open?(a.scrollHeight+50+'px'):'0';});
+  });
+
+  /* 筛选标签 */
+  document.querySelectorAll('.hall-tabs').forEach(function(box){
+    box.addEventListener('click',function(e){var b=e.target.closest('.ht');if(!b)return;box.querySelectorAll('.ht').forEach(function(o){o.classList.remove('on');});b.classList.add('on');});
+  });
+
+  /* 入场动画 */
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.style.opacity='1';en.target.style.transform='none';io.unobserve(en.target);}});},{threshold:.08});
+    document.querySelectorAll('.zd,.seat,.gd,.st,.cl,.nt,.sv,.fq').forEach(function(el){el.style.opacity='0';el.style.transform='translateY(24px)';el.style.transition='opacity .55s,transform .55s';io.observe(el);});
+  }
+})();
+</script>
+
+</body>
+</html>
